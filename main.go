@@ -1,3 +1,16 @@
+//Package push implements push notifications in cashq and noebs.
+//
+// How it works
+// We collect data and analysis from through our network so it can inform our analysis regarding
+// EBS reliability. Currently we are interested in these classes of errors:
+// - Excessive number of errors (like more than 5 consecutive SYSTEM_ERROR, 196 or 696)
+// - Helm specific errors
+// - we also omit specific class of errors
+// 		- insufficient funds
+// - inelgiblile accounts
+// - billers-down specific errors
+// - and other non systematic errors
+// there is all source of heuristics we are going to implement to ensure a reliable source of results.
 package push
 
 import (
